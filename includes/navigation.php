@@ -1,6 +1,6 @@
 <nav class="bg-white border-gray-200 dark:bg-gray-900">
 	<div class="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
-		<a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+		<a href="index.php" class="flex items-center space-x-3 rtl:space-x-reverse">
 			<img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
 			<span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
 		</a>
@@ -23,10 +23,10 @@
 						>Home</a>
 				</li>
 				<li>
-					<a href="about.php"
+					<a href="register.php"
 						class="block px-3 py-2 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
 						<?php if ($CURRENT_PAGE == "Index") { ?>aria-current="page"<?php } ?>
-						>About</a>
+						>Register</a>
 				</li>
 				<li>
 					<a href="patients.php"

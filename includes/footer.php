@@ -1,7 +1,3 @@
-<div class="footer">
-	&copy; <?php print date("Y"); ?>
-</div>
-
 <!-- Vital modal -->
 <div id="vital-crud-modal" tabindex="-1" aria-hidden="true"
 	class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
@@ -43,27 +39,23 @@
 							class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Height</label>
 						<input type="number" name="height" id="height"
 							class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-							placeholder="Height (cm)" required=""
-							onkeyup="calculateBMI()">
+							placeholder="Height (cm)" required="" onkeyup="calculateBMI()">
 					</div>
 					<div class="col-span-2 sm:col-span-1">
 						<label for="weight"
 							class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Weight</label>
 						<input type="number" name="weight" id="weight"
 							class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-							placeholder="Weight (kg)" required=""
-							onkeyup="calculateBMI()">
+							placeholder="Weight (kg)" required="" onkeyup="calculateBMI()">
 					</div>
 					<div class="col-span-2 sm:col-span-1">
 						<label for="bmi"
 							class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">BMI</label>
 						<input type="text" name="bmi" id="bmi"
 							class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-							placeholder="BMI" required=""
-							>
+							placeholder="BMI" required="">
 					</div>
-					<div class="col-span-2"
-					data-bmi-hidden="true">
+					<div class="col-span-2" data-bmi-hidden="true">
 						<fieldset>
 							<legend class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">General Health
 							</legend>
@@ -86,8 +78,7 @@
 							</div>
 						</fieldset>
 					</div>
-					<div class="col-span-2"
-					data-bmi-hidden="true">
+					<div class="col-span-2" data-bmi-hidden="true">
 						<fieldset>
 							<legend class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Are you
 								currently taking any drugs?
@@ -111,8 +102,7 @@
 							</div>
 						</fieldset>
 					</div>
-					<div class="col-span-2"
-					data-bmi-hidden="true">
+					<div class="col-span-2" data-bmi-hidden="true">
 						<label for="comments"
 							class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Comments</label>
 						<textarea id="comments" rows="4" name="comments"
@@ -211,6 +201,32 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.js"></script>
 <script src="/includes/js/scripts.js"></script>
+
+
+
+<footer class="m-4 bg-white rounded-lg shadow dark:bg-gray-800">
+	<div class="w-full max-w-screen-xl p-4 mx-auto md:flex md:items-center md:justify-between">
+		<span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+
+			&copy; <?php print date("Y"); ?>
+			. All Rights Reserved.
+		</span>
+		<ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+			<li>
+				<a href="#" class="hover:underline me-4 md:me-6">About</a>
+			</li>
+			<li>
+				<a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
+			</li>
+			<li>
+				<a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
+			</li>
+			<li>
+				<a href="#" class="hover:underline">Contact</a>
+			</li>
+		</ul>
+	</div>
+</footer>
 
 
 </body>
