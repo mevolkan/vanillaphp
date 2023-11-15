@@ -34,7 +34,7 @@
 					<div class="col-span-2 sm:col-span-1">
 						<label for="date"
 							class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Date</label>
-						<input type="Date" name="Date" id="Date"
+						<input type="date" name="date" id="date"
 							class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
 							placeholder="Date" required="">
 					</div>
@@ -59,30 +59,32 @@
 							class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
 							placeholder="BMI" required="">
 					</div>
-					<div class="col-span-2">
+					<div class="col-span-2"
+					data-bmi-hidden="true">
 						<fieldset>
 							<legend class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">General Health
 							</legend>
 							<div class="flex items-center mb-4">
-								<input id="general-health-1" type="radio" name="general-health" value="good"
+								<input id="generalHealth-1" type="radio" name="generalHealth" value="good"
 									class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
 									checked>
-								<label for="general-health-1"
+								<label for="generalHealth-1"
 									class="block text-sm font-medium text-gray-900 sm-2 dark:text-white">
 									Good
 								</label>
 							</div>
 							<div class="flex items-center mb-4">
-								<input id="general-health-2" type="radio" name="general-health" value="poor"
+								<input id="generalHealth-2" type="radio" name="generalHealth" value="poor"
 									class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600">
-								<label for="general-health-2"
+								<label for="generalHealth-2"
 									class="block text-sm font-medium text-gray-900 sm-2 dark:text-white">
 									Poor
 								</label>
 							</div>
 						</fieldset>
 					</div>
-					<div class="col-span-2">
+					<div class="col-span-2"
+					data-bmi-hidden="true">
 						<fieldset>
 							<legend class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Are you
 								currently taking any drugs?
@@ -106,7 +108,8 @@
 							</div>
 						</fieldset>
 					</div>
-					<div class="col-span-2">
+					<div class="col-span-2"
+					data-bmi-hidden="true">
 						<label for="description"
 							class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Comments</label>
 						<textarea id="description" rows="4"
