@@ -43,21 +43,24 @@
 							class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Height</label>
 						<input type="number" name="height" id="height"
 							class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-							placeholder="Height (cm)" required="">
+							placeholder="Height (cm)" required=""
+							onkeyup="calculateBMI()">
 					</div>
 					<div class="col-span-2 sm:col-span-1">
 						<label for="weight"
 							class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Weight</label>
 						<input type="number" name="weight" id="weight"
 							class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-							placeholder="Weight (kg)" required="">
+							placeholder="Weight (kg)" required=""
+							onkeyup="calculateBMI()">
 					</div>
 					<div class="col-span-2 sm:col-span-1">
 						<label for="bmi"
 							class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">BMI</label>
-						<input type="number" name="bmi" id="bmi"
+						<input type="text" name="bmi" id="bmi"
 							class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-							placeholder="BMI" required="">
+							placeholder="BMI" required=""
+							>
 					</div>
 					<div class="col-span-2"
 					data-bmi-hidden="true">
@@ -204,42 +207,6 @@
 	</div>
 </div>
 
-
-<script>
-	function submitForm() {
-		const form = document.getElementById('patient-form');
-		const formData = new FormData(form);
-		const jsonData = {};
-
-		formData.forEach((value, key) => {
-			jsonData[key] = value;
-		});
-
-		const apiUrl = 'http://localhost:3000/patients';
-
-		fetch(apiUrl, {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify(jsonData),
-		})
-			.then(response => {
-				if (!response.ok) {
-					throw new Error(`HTTP error! Status: ${response.status}`);
-				}
-				return response.json();
-			})
-			.then(data => {
-				// Handle the successful response
-				document.getElementById('status').innerText = JSON.stringify(data, null, 2);
-			})
-			.catch(error => {
-				// Handle errors
-				console.error('Error:', error);
-			});
-	}
-</script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.js"></script>
 <script src="/includes/js/scripts.js"></script>
