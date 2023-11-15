@@ -62,7 +62,7 @@
                                     <path clip-rule="evenodd" fill-rule="evenodd"
                                         d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" />
                                 </svg>
-                                Add product
+                                Add Patient
                             </button>
                             <div class="flex items-center w-full space-x-3 md:w-auto">
                                 <button id="actionsDropdownButton" data-dropdown-toggle="actionsDropdown"
@@ -162,14 +162,17 @@
                                 <thead
                                     class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                     <tr>
-                                        <th scope="col" class="px-4 py-3">Product name</th>
-                                        <th scope="col" class="px-4 py-3">Category</th>
-                                        <th scope="col" class="px-4 py-3">Brand</th>
-                                        <th scope="col" class="px-4 py-3">Description</th>
-                                        <th scope="col" class="px-4 py-3">Price</th>
+                                        <th scope="col" class="px-4 py-3">First name</th>
+                                        <th scope="col" class="px-4 py-3">Last Name</th>
+                                        <th scope="col" class="px-4 py-3">DoB</th>
+                                        <th scope="col" class="px-4 py-3">Gender</th>
                                         <th scope="col" class="px-4 py-3">
-                                            <span class="sr-only">Actions</span>
+                                            View Reports
                                         </th>
+                                        <th scope="col" class="px-4 py-3">
+                                            Vitals
+                                        </th>
+                                    </tr>
                                     </tr>
                                 </thead>
 
@@ -178,42 +181,18 @@
                                     foreach ($data as $patient) {
                                         ?>
                                         <tr class="border-b dark:border-gray-700">
-                                            <th scope="row"
-                                                class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                <?php $patient['patientId'] ?></th>
-                                            <td class="px-4 py-3"><?php $patient['firstName'] ?></td>
-                                            <td class="px-4 py-3"><?php $patient['lastName'] ?></td>
-                                            <td class="px-4 py-3"><?php $patient['dob'] ?></td>
-                                            <td class="px-4 py-3"><?php $patient['gender'] ?></td>
-                                            <td class="flex items-center justify-end px-4 py-3">
-                                                <button id="apple-imac-27-dropdown-button"
-                                                    data-dropdown-toggle="apple-imac-27-dropdown"
-                                                    class="inline-flex items-center p-0.5 text-sm font-medium text-center text-gray-500 hover:text-gray-800 rounded-lg focus:outline-none dark:text-gray-400 dark:hover:text-gray-100"
+                                            <td class="px-4 py-3"><?php echo $patient['firstName'] ?></td>
+                                            <td class="px-4 py-3"><?php echo $patient['lastName'] ?></td>
+                                            <td class="px-4 py-3"><?php echo $patient['dob'] ?></td>
+                                            <td class="px-4 py-3"><?php echo $patient['gender'] ?></td>
+                                            <td class="px-4 py-3">View</td>
+                                            <td class="px-4 py-3"><!-- Modal toggle -->
+                                                <!-- Modal toggle -->
+                                                <button data-modal-target="crud-modal" data-modal-toggle="crud-modal"
+                                                    class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                                                     type="button">
-                                                    <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
-                                                        viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
-                                                    </svg>
+                                                    Add
                                                 </button>
-                                                <div id="apple-imac-27-dropdown"
-                                                    class="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-                                                    <ul class="py-1 text-sm text-gray-700 dark:text-gray-200"
-                                                        aria-labelledby="apple-imac-27-dropdown-button">
-                                                        <li>
-                                                            <a href="#"
-                                                                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Show</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#"
-                                                                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="py-1">
-                                                        <a href="#"
-                                                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Delete</a>
-                                                    </div>
-                                                </div>
                                             </td>
                                             <?php
                                         }
@@ -225,45 +204,6 @@
                             echo 'Failed to decode JSON response';
                             }
                         ?>
-
-                        <tr class="border-b dark:border-gray-700">
-                            <th scope="row"
-                                class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Apple iMac
-                                27&#34;</th>
-                            <td class="px-4 py-3">PC</td>
-                            <td class="px-4 py-3">Apple</td>
-                            <td class="px-4 py-3">300</td>
-                            <td class="px-4 py-3">$2999</td>
-                            <td class="flex items-center justify-end px-4 py-3">
-                                <button id="apple-imac-27-dropdown-button" data-dropdown-toggle="apple-imac-27-dropdown"
-                                    class="inline-flex items-center p-0.5 text-sm font-medium text-center text-gray-500 hover:text-gray-800 rounded-lg focus:outline-none dark:text-gray-400 dark:hover:text-gray-100"
-                                    type="button">
-                                    <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
-                                    </svg>
-                                </button>
-                                <div id="apple-imac-27-dropdown"
-                                    class="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-                                    <ul class="py-1 text-sm text-gray-700 dark:text-gray-200"
-                                        aria-labelledby="apple-imac-27-dropdown-button">
-                                        <li>
-                                            <a href="#"
-                                                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Show</a>
-                                        </li>
-                                        <li>
-                                            <a href="#"
-                                                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Edit</a>
-                                        </li>
-                                    </ul>
-                                    <div class="py-1">
-                                        <a href="#"
-                                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Delete</a>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
 
                     </div>
                     <nav class="flex flex-col items-start justify-between p-4 space-y-3 md:flex-row md:items-center md:space-y-0"

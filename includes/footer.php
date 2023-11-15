@@ -1,7 +1,127 @@
 <div class="footer">
-	&copy; <?php print date("Y");?>
+	&copy; <?php print date("Y"); ?>
 </div>
+
+<!-- Main modal -->
+<div id="crud-modal" tabindex="-1" aria-hidden="true"
+	class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+	<div class="relative w-full max-w-md max-h-full p-4">
+		<!-- Modal content -->
+		<div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+			<!-- Modal header -->
+			<div class="flex items-center justify-between p-4 border-b rounded-t md:p-5 dark:border-gray-600">
+				<h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+					Add Patient Vital
+				</h3>
+				<button type="button"
+					class="inline-flex items-center justify-center w-8 h-8 text-sm text-gray-400 bg-transparent rounded-lg hover:bg-gray-200 hover:text-gray-900 ms-auto dark:hover:bg-gray-600 dark:hover:text-white"
+					data-modal-toggle="crud-modal">
+					<svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+						viewBox="0 0 14 14">
+						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+							d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+					</svg>
+					<span class="sr-only">Close modal</span>
+				</button>
+			</div>
+			<!-- Modal body -->
+			<form action="#" class="p-4 md:p-5">
+				<div class="grid grid-cols-2 gap-4 mb-4">
+					<div class="col-span-2 sm:col-span-1">
+						<label for="date"
+							class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Date</label>
+						<input type="text" name="Date" id="Date"
+							class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+							placeholder="Date" required="">
+					</div>
+					<div class="col-span-2 sm:col-span-1">
+						<label for="height"
+							class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Height</label>
+						<input type="number" name="height" id="height"
+							class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+							placeholder="Height (cm)" required="">
+					</div>
+					<div class="col-span-2 sm:col-span-1">
+						<label for="weight"
+							class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Weight</label>
+						<input type="number" name="weight" id="weight"
+							class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+							placeholder="Weight (kg)" required="">
+					</div>
+					<div class="col-span-2 sm:col-span-1">
+						<label for="bmi"
+							class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">BMI</label>
+						<input type="number" name="bmi" id="bmi"
+							class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+							placeholder="BMI" required="">
+					</div>
+					<div class="col-span-2">
+						<fieldset>
+							<legend class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">General Health
+							</legend>
+							<div class="flex items-center mb-4">
+								<input id="general-health-1" type="radio" name="general-health" value="good"
+									class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
+									checked>
+								<label for="general-health-1"
+									class="block text-sm font-medium text-gray-900 sm-2 dark:text-white">
+									Good
+								</label>
+							</div>
+							<div class="flex items-center mb-4">
+								<input id="general-health-2" type="radio" name="general-health" value="poor"
+									class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600">
+								<label for="general-health-2"
+									class="block text-sm font-medium text-gray-900 sm-2 dark:text-white">
+									Poor
+								</label>
+							</div>
+						</fieldset>
+					</div>
+					<div class="col-span-2">
+						<fieldset>
+							<legend class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Are you currently taking any drugs?
+							</legend>
+							<div class="flex items-center mb-4">
+								<input id="drugs-1" type="radio" name="drugs" value="yes"
+									class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
+									checked>
+								<label for="drugs-1"
+									class="block text-sm font-medium text-gray-900 sm-2 dark:text-white">
+									Yes
+								</label>
+							</div>
+							<div class="flex items-center mb-4">
+								<input id="drugs-2" type="radio" name="drugs" value="no"
+									class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600">
+								<label for="drugs-2"
+									class="block text-sm font-medium text-gray-900 sm-2 dark:text-white">
+									No
+								</label>
+							</div>
+						</fieldset>
+					</div>
+					<div class="col-span-2">
+						<label for="description"
+							class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Comments</label>
+						<textarea id="description" rows="4"
+							class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+							placeholder="Write comment here"></textarea>
+					</div>
+				</div>
+				<button type="submit"
+					class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+
+					Add Vitals
+				</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.js"></script>
 
 </body>
+
 </html>
