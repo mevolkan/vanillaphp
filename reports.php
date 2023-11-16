@@ -35,7 +35,7 @@
                         class="flex flex-col items-center justify-between p-4 space-y-3 md:flex-row md:space-y-0 md:space-x-4">
                         <div class="w-full md:w-1/2">
                             <form class="flex items-center">
-                                <label for="date-filter" >Date Filter</label>
+                                <label for="date-filter">Date Filter</label>
                                 <div class="relative w-full">
                                     <input type="date" id="date-filter"
                                         class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
@@ -87,7 +87,17 @@
                                             <td class="px-4 py-3"><?php echo $vital['date'] ?></td>
                                             <td class="px-4 py-3"><?php echo $vital['height'] ?></td>
                                             <td class="px-4 py-3"><?php echo $vital['weight'] ?></td>
-                                            <td class="px-4 py-3"><?php echo $vital['bmi'] ?></td>
+                                            <td class="px-4 py-3"><?php $bmi = $vital['bmi'];
+
+                                            if ($bmi < 18.5) {
+                                                echo "Underweight";
+                                                } elseif ($bmi >= 18.5 && $bmi < 25) {
+                                                echo "Normal";
+                                                } elseif ($bmi >= 25) {
+                                                echo "Overweight";
+                                                } else {
+                                                echo "Invalid BMI value";
+                                                } ?></td>
                                             <td class="px-4 py-3"><?php echo $vital['generalHealth'] ?></td>
                                             <td class="px-4 py-3"><?php echo $vital['takingDrugs'] ?></td>
                                             <td class="px-4 py-3"><?php echo $vital['comments'] ?></td>
