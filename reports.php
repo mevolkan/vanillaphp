@@ -18,7 +18,7 @@
     $headers = [
         'Content-Type' => 'application/json'
     ];
-    $request = new Request('GET', 'localhost:3000/patients', $headers);
+    $request = new Request('GET', 'localhost:3000/vitals', $headers);
     $res = $client->sendAsync($request)->wait();
     // Decode the JSON response
     $data = json_decode($res->getBody(), true);
@@ -72,15 +72,16 @@
                                 <thead
                                     class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                     <tr>
-                                        <th scope="col" class="px-4 py-3">First name</th>
-                                        <th scope="col" class="px-4 py-3">Last Name</th>
-                                        <th scope="col" class="px-4 py-3">DoB</th>
-                                        <th scope="col" class="px-4 py-3">Gender</th>
+                                        <th scope="col" class="px-4 py-3">Date</th>
+                                        <th scope="col" class="px-4 py-3">Height</th>
+                                        <th scope="col" class="px-4 py-3">Weight</th>
+                                        <th scope="col" class="px-4 py-3">BMI</th>
+                                        <th scope="col" class="px-4 py-3">General Health</th>
+                                        <th scope="col" class="px-4 py-3">On Drugs</th>
+                                        <th scope="col" class="px-4 py-3">Comments</th>
+                                        <th scope="col" class="px-4 py-3">Patient</th>
                                         <th scope="col" class="px-4 py-3">
                                             View Reports
-                                        </th>
-                                        <th scope="col" class="px-4 py-3">
-                                            Vitals
                                         </th>
                                     </tr>
                                     </tr>
@@ -88,23 +89,24 @@
 
                                 <tbody>
                                     <?php
-                                    foreach ($data as $patient) {
+                                    foreach ($data as $vital) {
                                         ?>
                                         <tr class="border-b dark:border-gray-700">
-                                            <td class="px-4 py-3"><?php echo $patient['firstName'] ?></td>
-                                            <td class="px-4 py-3"><?php echo $patient['lastName'] ?></td>
-                                            <td class="px-4 py-3"><?php echo $patient['dob'] ?></td>
-                                            <td class="px-4 py-3"><?php echo $patient['gender'] ?></td>
-                                            <td class="px-4 py-3">View</td>
-                                            <td class="px-4 py-3"><!-- Modal toggle -->
+                                            <td class="px-4 py-3"><?php echo $vital['date'] ?></td>
+                                            <td class="px-4 py-3"><?php echo $vital['height'] ?></td>
+                                            <td class="px-4 py-3"><?php echo $vital['weight'] ?></td>
+                                            <td class="px-4 py-3"><?php echo $vital['bmi'] ?></td>
+                                            <td class="px-4 py-3"><?php echo $vital['generalHealth'] ?></td>
+                                            <td class="px-4 py-3"><?php echo $vital['takingDrugs'] ?></td>
+                                            <td class="px-4 py-3"><?php echo $vital['comments'] ?></td>
+                                            <td class="px-4 py-3"><?php echo $vital['patientId'] ?></td>
+                                            <td class="px-4 py-3">
                                                 <!-- Modal toggle -->
                                                 <button data-modal-target="vital-crud-modal"
                                                     data-modal-toggle="vital-crud-modal"
                                                     class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                                                    type="button"
-                                                    data-patient-id="<?php echo $patient['patientId'] ?>"
-                                                    onclick="setPatientId(this)"
-                                                    >
+                                                    type="button" data-patient-id="<?php echo $patient['patientId'] ?>"
+                                                    onclick="setPatientId(this)">
                                                     Add
                                                 </button>
                                             </td>
