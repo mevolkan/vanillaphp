@@ -12,6 +12,7 @@
 
 
     <main>
+    <div class="container" id="main-content">
         <?php
         require_once "vendor/autoload.php";
 
@@ -31,27 +32,8 @@
 
             $data = json_decode($res->getBody(), true);
 
-            if ($data !== null) {
-                return $data;
-                } else {
-                echo "No data received.";
-                }
+            ?>
 
-            } catch (RequestException $e) {
-            if ($e->hasResponse()) {
-                $statusCode = $e->getResponse()->getStatusCode();
-
-                if ($statusCode === 404) {
-                    echo "404 Not Found: The requested resource was not found.";
-                    } else {
-                    echo "Request failed with status code: " . $statusCode;
-                    }
-                } else {
-                echo "Request failed: " . $e->getMessage();
-                }
-            }
-        ?>
-        <div class="container" id="main-content">
             <?php
             if ($data !== null) {
                 ?>
@@ -199,6 +181,21 @@
                 } else {
                 echo 'No Data, please confirm database has values !';
                 }
+
+            } catch (RequestException $e) {
+            if ($e->hasResponse()) {
+                $statusCode = $e->getResponse()->getStatusCode();
+
+                if ($statusCode === 404) {
+                    echo "404 Not Found: The requested resource was not found.";
+                    } else {
+                    echo "Request failed with status code: " . $statusCode;
+                    }
+                } else {
+                echo "Request failed: " . $e->getMessage();
+                }
+            }
+
             ?>
         </div>
     </main>
