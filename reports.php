@@ -36,21 +36,12 @@
                         <div class="w-full md:w-1/2">
                             <form class="flex items-center">
                                 <label for="date-filter">Date Filter</label>
-                                <div class="relative w-full">
+                                <div class="relative ">
                                     <input type="date" id="date-filter"
                                         class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                         placeholder="Search" required="">
                                 </div>
                             </form>
-                        </div>
-                        <div
-                            class="flex flex-col items-stretch justify-end flex-shrink-0 w-full space-y-2 md:w-auto md:flex-row md:space-y-0 md:items-center md:space-x-3">
-                            <!-- Modal toggle -->
-                            <button data-modal-target="record-crud-modal" data-modal-toggle="record-crud-modal"
-                                class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                                type="button">
-                                Record Vitals
-                            </button>
                         </div>
                     </div>
 
